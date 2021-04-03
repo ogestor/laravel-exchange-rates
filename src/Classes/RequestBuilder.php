@@ -11,7 +11,7 @@ class RequestBuilder
      *
      * @var string
      */
-    private $baseUrl = 'https://api.exchangeratesapi.io';
+    private $baseUrl = 'http://api.exchangeratesapi.io';
 
     /**
      * @var Client
