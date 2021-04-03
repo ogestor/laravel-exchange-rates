@@ -39,6 +39,10 @@ class RequestBuilder
     public function makeRequest(string $path, array $queryParams = [])
     {
         $url = $this->baseUrl.$path.'?';
+        
+        if (!empty(env('EXCHANGE_RATES_TOKEN'))) {
+	        $url .= 'access_key=' . env('EXCHANGE_RATES_TOKEN');
+        }
 
         foreach ($queryParams as $param => $value) {
             $url .= '&'.urlencode($param).'='.urlencode($value);
