@@ -43,11 +43,11 @@ class RequestBuilder
         $token = null;
 
         if(is_array(config('exchangerates.secrets'))) {
-	    $token = config('exchangerates.secrets')[array_rand(config('exchangerates.secrets'))];
+		$token = config('exchangerates.secrets')[array_rand(config('exchangerates.secrets'))];
         }
 
         if (!empty(env('EXCHANGE_RATES_TOKEN'))) {
-	    $url .= 'access_key=' . ($token ?? env('EXCHANGE_RATES_TOKEN'));
+		$url .= 'access_key=' . ($token ?? env('EXCHANGE_RATES_TOKEN'));
         }
 
         foreach ($queryParams as $param => $value) {
